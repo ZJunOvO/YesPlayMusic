@@ -16,7 +16,7 @@
     "electron:serve": "vue-cli-service electron:serve",
     "electron:buildicon": "electron-icon-builder --input=./build/icons/icon.png --output=build --flatten",
     "electron:publish": "vue-cli-service electron:build -mwl -p always",
-    "postinstall": "electron-builder install-app-deps",
+    "postinstall": "node -e \"if(!process.env.VERCEL) process.exit(1)\" || electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
     "prettier": "npx prettier --write ./src",
     "netease_api:run": "npx @neteaseapireborn/api"
