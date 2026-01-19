@@ -1,0 +1,9 @@
+{
+  "buildCommand": "NODE_OPTIONS=--openssl-legacy-provider yarn run build",
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "https://your-netease-api.example.com/:match*"
+    }
+  ]
+}
